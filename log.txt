@@ -1,0 +1,31 @@
+info: 02/08/2022 18:18:41.888 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (170ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']  
+      SET NOCOUNT ON;
+      INSERT INTO [Users] ([Id], [Name])
+      VALUES (@p0, @p1);
+
+info: 02/08/2022 18:18:42.590 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (90ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[Name]
+      FROM [Users] AS [u]
+      WHERE [u].[Id] = @__userId_0
+
+info: 02/08/2022 18:18:42.837 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (74ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']   
+      SET NOCOUNT ON;
+      UPDATE [Users] SET [Name] = @p0
+      WHERE [Id] = @p1;
+      SELECT @@ROWCOUNT;
+
+info: 02/08/2022 18:18:42.995 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (55ms) [Parameters=[@__userId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[Id], [u].[Name]
+      FROM [Users] AS [u]
+      WHERE [u].[Id] = @__userId_0
+
+info: 02/08/2022 18:18:43.189 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (94ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SET NOCOUNT ON;
+      DELETE FROM [Users]
+      WHERE [Id] = @p0;
+      SELECT @@ROWCOUNT;
