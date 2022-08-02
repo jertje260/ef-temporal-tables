@@ -1,0 +1,1 @@
+Quick and simple application that uses temporal tables.
